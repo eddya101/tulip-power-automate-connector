@@ -1,9 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Tulip Tables",
-    "description": "Connect to your Tulip Tables in your Tulip instance to read, update and create records.",
-    "version": "1.0"
+    "title": "Tulip",
+    "description": "Connect to your Tulip instance to read, update and create records in Tulip Tables. You will need an active Tulip account and access to set up a bot",
+    "contact": {
+      "name": "Tulip Support",
+      "url": "https://support.tulip.co/",
+      "email": "support@tulip.co"
+    }
+    "version": "1.0",
+    
   },
   "host": "api.tulip.co",
   "basePath": "/api/v3",
@@ -277,3 +283,21 @@
   ],
   "tags": []
 }
+  "x-ms-connector-metadata": [
+      {
+        "propertyName": "Website",
+        "propertyValue": "https://tulip.co/"
+      },
+      {
+        "propertyName": "Privacy policy",
+        "propertyValue": "https://tulip.co/legal/privacy-policy/"
+      },
+      {
+        "propertyName": "API license Agreement",
+        "propertyValue": "https://tulip.co/legal/api-license-agreement/"
+      },
+      {
+        "propertyName": "Categories",
+        "propertyValue": "Business Intelligence;Collaboration"
+      }
+    ]
