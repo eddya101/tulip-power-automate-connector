@@ -23,6 +23,6 @@ The connector supports the following operations:
 * Files Type - The connector is currently limited to string, numbers, integers and boolens. It will not handle images, videos and files.
 * Individual Records - Only handling individual table records. Likely to be expanded in the future.
 
-# For support see [support.tulip.co](support.tulip.co) or [support@tulip.co](mailto:support@tulip.co)
+### For support see [support.tulip.co](support.tulip.co) or [support@tulip.co](mailto:support@tulip.co)
 
-# This connector is provided for use by Tulip customers to leverage the Tulip API in Microsoft environment. Usage of the connector is to [Tulip Privacy Policy](https://tulip.co/legal/privacy-policy/) and [API License Agreement](https://tulip.co/legal/api-license-agreement/)
+### This connector is provided for use by Tulip customers to leverage the Tulip API in Microsoft environment. Usage of the connector is to [Tulip Privacy Policy](https://tulip.co/legal/privacy-policy/) and [API License Agreement](https://tulip.co/legal/api-license-agreement/)
