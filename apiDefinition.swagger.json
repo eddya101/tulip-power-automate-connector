@@ -27,6 +27,7 @@
             "description":"Create a record in a tulip table",
             "summary":"Create Record",
             "operationId":"CreateRecord",
+            "consumes": ["application/json"],
             "parameters":[
                {
                   "name":"tableId",
@@ -39,7 +40,8 @@
                      "operationId":"GetTables",
                      "value-path":"id",
                      "value-title":"label"
-                  }
+                  },
+                  "x-ms-url-encoding": "single"
                },
                {
                   "name":"dynamicListSchema",
@@ -73,7 +75,7 @@
                            }
                         },
                         "value-path":"items"
-                     }                     
+                     }
                   }
                }
             }
@@ -97,7 +99,8 @@
                   "in":"path",
                   "required":true,
                   "type":"string",
-                  "default":"Saq8bC2AxcM5M2sN2"
+                  "default":"Saq8bC2AxcM5M2sN2",
+                  "x-ms-url-encoding": "single"
                }
             ],
             "x-ms-visibility":"internal"
@@ -243,7 +246,8 @@
                      "operationId":"GetTables",
                      "value-path":"id",
                      "value-title":"label"
-                  }
+                  },
+                  "x-ms-url-encoding": "single"
                },
                {
                   "name":"recordId",
@@ -252,6 +256,7 @@
                   "type":"string",
                   "x-ms-summary":"Record Unique ID",
                   "description":"Unique ID for the record in the selected Tulip Table",
+                  "x-ms-url-encoding": "single"
                }
             ]
          },
@@ -266,6 +271,7 @@
             },
             "summary":"Update Record",
             "operationId":"UpdateRecord",
+            "consumes":["application/json"],
             "parameters":[
                {
                   "name":"tableId",
@@ -278,7 +284,8 @@
                      "operationId":"GetTables",
                      "value-path":"id",
                      "value-title":"label"
-                  }
+                  },
+                  "x-ms-url-encoding": "single"
                },
                {
                   "name":"recordId",
@@ -287,6 +294,7 @@
                   "type":"string",
                   "x-ms-summary":"Record Unique ID",
                   "description":"Unique ID for the record in the selected Tulip Table",
+                  "x-ms-url-encoding": "single"
                },
                {
                   "name":"body",
