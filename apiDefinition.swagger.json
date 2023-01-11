@@ -1,0 +1,279 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Tulip Tables",
+    "description": "Connect to your Tulip Tables in your Tulip instance to read, update and create records.",
+    "version": "1.0"
+  },
+  "host": "api.tulip.co",
+  "basePath": "/api/v3",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/tables/{tableId}/records": {
+      "post": {
+        "description": "Create a record in a tulip table",
+        "summary": "Create Record",
+        "operationId": "CreateRecord",
+        "parameters": [
+          {
+            "name": "tableId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-dynamic-values": {
+              "operationId": "GetTables",
+              "value-path": "id",
+              "value-title": "label"
+            }
+          },
+          {
+            "name": "dynamicListSchema",
+            "in": "body",
+            "required": true,
+            "description": "Details to update the table.",
+            "schema": {
+              "type": "object",
+              "x-ms-dynamic-schema": {
+                "operationId": "GetTable",
+                "parameters": {
+                  "tableId": {
+                    "parameter": "tableId"
+                  }
+                },
+                "value-path": "items"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/tables/{tableId}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Get Table Scheme",
+        "operationId": "GetTable",
+        "parameters": [
+          {
+            "name": "tableId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "default": "Saq8bC2AxcM5M2sN2"
+          }
+        ],
+        "x-ms-visibility": "internal"
+      }
+    },
+    "/tables": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "id"
+                  },
+                  "importFamilyID": {
+                    "type": "string",
+                    "description": "importFamilyID"
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "label"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "description"
+                  },
+                  "columns": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "description": "name"
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "label"
+                        },
+                        "description": {
+                          "type": "string",
+                          "description": "description"
+                        },
+                        "dataType": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "columnOrientation": {
+                              "type": "string",
+                              "description": "columnOrientation"
+                            },
+                            "tableLinkID": {
+                              "type": "string",
+                              "description": "tableLinkID"
+                            }
+                          },
+                          "description": "dataType"
+                        },
+                        "hidden": {
+                          "type": "boolean",
+                          "description": "hidden"
+                        },
+                        "unique": {
+                          "type": "boolean",
+                          "description": "unique"
+                        }
+                      }
+                    },
+                    "description": "columns"
+                  },
+                  "createdBy": {
+                    "type": "string",
+                    "description": "createdBy"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "description": "createdAt"
+                  },
+                  "updatedBy": {
+                    "type": "string",
+                    "description": "updatedBy"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "description": "updatedAt"
+                  },
+                  "workspaceID": {
+                    "type": "string",
+                    "description": "workspaceID"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Tables",
+        "description": "Gets a list of your tulip tables and the fields",
+        "operationId": "GetTables",
+        "parameters": []
+      }
+    },
+    "/tables/{tableId}/records/{recordId}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "x-ms-dynamic-schema": {
+                "operationId": "GetTable",
+                "parameters": {
+                  "tableId": {
+                    "parameter": "tableId"
+                  }
+                },
+                "value-path": "items"
+              }
+            }
+          }
+        },
+        "summary": "Get Record",
+        "description": "Get a record from a Tulip Table",
+        "operationId": "GetRecord",
+        "parameters": [
+          {
+            "name": "tableId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-dynamic-values": {
+              "operationId": "GetTables",
+              "value-path": "id",
+              "value-title": "label"
+            }
+          },
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Update Record",
+        "operationId": "UpdateRecord",
+        "parameters": [
+          {
+            "name": "tableId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Updates the fields of a record in a Tulip Table by the record id. The record's _updatedAt field will be updated to the current time.  Requires the tables:write API key scope."
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "basic-auth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basic-auth": []
+    }
+  ],
+  "tags": []
+}
