@@ -22,6 +22,7 @@ The connector supports the following operations:
 ## Known Issues & Limitation
 * Files Type - The connector is currently limited to string, numbers, integers and boolens. It will not handle images, videos and files.
 * Individual Records - Only handling individual table records. Likely to be expanded in the future.
+* Duplication of Record ID in Update Record Function - Update record requires two ids, these must be identical. This is due to it being required by the Tulip API in bot the path and the body. We are looking for a fix here and will update when it is implemented.
 
 ### For support see [support.tulip.co](support.tulip.co) or [support@tulip.co](mailto:support@tulip.co)
 
