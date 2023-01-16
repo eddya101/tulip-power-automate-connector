@@ -168,6 +168,7 @@
              "summary":"Get Tables",
              "description":"Gets a list of your tulip tables and the fields",
              "operationId":"GetTables",
+             "x-ms-visibility":"internal",
              "parameters":[
                 
              ]
@@ -217,13 +218,8 @@
                     "$ref":"#/parameters/recordId"
                 },
                 {
-                   "name":"body",
-                   "in":"body",
-                   "required":false,
-                   "schema":{
-                      "type":"string"
-                   }
-                }
+                  "$ref": "#/parameters/dynamicTableSchema"
+                 }
              ],
              "description":"Updates the fields of a record in a Tulip Table by the record id. The record's _updatedAt field will be updated to the current time.  Requires the tables:write API key scope."
           }
