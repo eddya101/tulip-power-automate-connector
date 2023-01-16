@@ -4,9 +4,9 @@
       "username": {
         "type": "securestring",
         "uiDefinition": {
-          "displayName": "apiKey",
-          "description": "The apiKey for this api",
-          "tooltip": "Provide the apiKey",
+          "displayName": "API Key",
+          "description": "The API Key for your Tulip Instance Bot",
+          "tooltip": "Tulip Bot API Key",
           "constraints": {
             "tabIndex": 2,
             "clearText": true,
@@ -17,9 +17,9 @@
       "password": {
         "type": "securestring",
         "uiDefinition": {
-          "displayName": "secret",
-          "description": "The secret for this api",
-          "tooltip": "Provide the secret",
+          "displayName": "Secret",
+          "description": "The secret for your Tulip Instance Bot",
+          "tooltip": "Tulip Instanc Bot Secret",
           "constraints": {
             "tabIndex": 3,
             "clearText": false,
@@ -35,7 +35,7 @@
           },
           "description": "Tulip instance url (Example: <mycompany>.tulip.co)",
           "displayName": "Tulip Instance URL",
-          "tooltip": "Provide Your Tulip Instance url"
+          "tooltip": "Provide Your Tulip Instance url <mycompany>.tulip.co"
         }
       }
     },
